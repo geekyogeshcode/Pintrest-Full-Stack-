@@ -1,0 +1,20 @@
+<% include ./partials/header.ejs %>
+
+
+<div class="main">
+  <div class="loginform">
+      <h1 >Create Account</h1>
+      <form action="/register" method="post">
+        <input type="text" placeholder="fullname" name="fullname">
+        <input type="text" placeholder="username" name="username">
+        <input type="email" placeholder="email" name="email">
+        <input  type="password" placeholder="password" name="password">
+        <!-- <a href="#">forgot password</a> -->
+        <button >Create Account</button>
+      </form>
+      <a href="/" style="text-align: center; display: block;">Already have an Account</a>
+  </div>
+</div>
+
+
+<% include ./partials/footer.ejs %>

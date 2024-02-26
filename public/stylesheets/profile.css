@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: General Sans Medium;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+
+.profileCont{
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: #dadadf; */
+}
+.top{
+    max-height: 55vh;
+    /* background-color: orange; */
+}
+  nav{
+    height: 10vh;
+    padding: 0.5vw 2vw;
+    /* background-color: darkcyan; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.one{
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    min-width: 25%;
+    gap: 1vw;
+    justify-content: space-evenly;
+}
+.one img{
+    width: 3vw;
+}
+.one >*{
+    cursor: pointer;
+}
+
+.two{
+    min-width: 50%;
+    /* border: 1px solid; */
+}
+.two input{
+    width: 100%;
+    height: 100%;
+    border-radius: 2vw;
+    padding: 1vw 2vw;
+    font-size: 1.3vw;
+    border: none;
+    outline: none;
+    background-color: #dadada;
+}
+.three{
+    min-width: 20vw;
+    height: 100%;
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.three i{
+    font-size: 2vw;
+    cursor: pointer;
+    color: #000;
+}
+
+.mainInfo{
+    width: 100%;
+    height: 50vh;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    margin: 1vw 0;
+}
+.inner{
+    width: 20vw;
+    height: 100%;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.inner .img{
+    width: 38%;
+    border-radius: 50%;
+    background-image:url('https://images.unsplash.com/photo-1682687982470-8f1b0e79151a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8') ;
+    background-size: cover;
+
+    height: 30%;
+    /* border: 1px solid; */
+    text-align: center;
+    /* overflow: hidden; */
+    position: relative;
+}
+.inner .img i{
+    position: absolute;
+    bottom:0.4vw;
+    color: #000;
+    right: -0.6vw;
+    transition: all ease 0.3s;
+}
+.inner .img i:hover{
+    scale: 1.2;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.personal{
+    min-width: 40%;
+    max-height: 30%;
+    text-align: center;
+    /* border: 1px solid; */
+}
+.personal p{
+    font-size: 1.26vw;
+}
+.personal h1{
+    font-size: 3vw;
+    white-space: nowrap;
+}
+.follow{
+    min-width: 40%;
+    height: 40%;
+    margin-top: 1vw;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.follow .first{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    cursor: pointer;
+}
+.second a{
+    padding: 1vw 2vw;
+    text-decoration: none;
+    color: #000;
+    border-radius: 3vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    margin-top: 1vw;
+    background-color: #dadada;
+    transition: 0.3s all ease;
+}
+.second a:hover{
+    background-color: #5e5e5e;
+    color: #fff;
+}
+
+.bottom{
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+.add{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding:0.5vw 0.7vw;
+    /* border: 1px solid; */
+}
+.add i{
+    font-size: 2vw;
+
+}
+
+/* .add form label{
+    padding: 1vw;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+.add i{
+    font-size: 2vw;
+    color: #000;
+}
+.add form label:hover{
+    background-color: #d6d6d65e;
+     background-color: #dadada; 
+}*/
+
+.cards{
+    /* border: 1px solid; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 1vw;
+}
+.bottom .card{
+    width: 32.5%;
+    min-height: 40vh;
+    /* border: 1px solid; */
+    overflow: hidden;
+}
+.card h3{
+    font-size: 1.6vw;
+    margin-top: 1vw;
+    line-height: 1.2vw;
+}
+.card p{
+    font-size: 1.2vw;
+    opacity: 0.7;
+}
+
+.card img{
+    border-radius: 1vw;
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+}
+#popup-first{
+    padding: 1vw;
+    width: 40vw;
+    min-height: 50vh;
+    background-color: #ffffff;
+    z-index: 10;
+    border-radius: 2vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    border: 1px solid lightblue;
+}
+#popup-first form{
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#popup-first input[type="text"], #popup-first input[type="file"] {
+    width: 80%;
+    height: auto;
+    word-wrap: break-word;
+    font-size: 1.4vw;
+    padding: 1vw;
+    margin: 5px 0;
+    border-radius: 1vw;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.616);
+}
+textarea{
+    border: 1px solid rgba(128, 128, 128, 0.616);
+    border-radius: 1vw;
+    /* border: none; */
+    width: 80%;
+    height: auto;
+    min-height: 8vh;
+    max-height: 12vh;
+    word-wrap: break-word;
+    font-size: 1vw;
+    padding: 1vw;
+    outline: none;
+    resize: none;
+}
+.pro{
+    width: 200px;
+    border: 1px solid;
+}
+#popup-first button ,label{
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#popup-first > button{
+    display: block;
+    text-align: center;
+    background-color: orange;
+    margin-left: 4vw;
+
+}
+
+
+
+
+main{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    /* gap: 2vw; */
+    row-gap: 0vw;
+    padding: 2vw 2vw;
+    column-gap: 1vw;
+    /* border: 2px solid; */
+}
+main .show-box{
+    width: 15vw;
+    height: 40vh;
+    /* border: 2px solid; */
+}
+main .show-box img{
+    width: 100%;
+    height: 70%;
+    border-radius: 1vw;
+    object-fit: contain;
+    /* border: 2px solid; */
+    margin-bottom: 0.5vw;
+}
+main .show-box h2{
+    /* border: 2px solid; */
+    text-align: center;
+    width: 100%;
+    height:20%;
+}
+
+main .image-container{
+    width: 30vw;
+    height: 45vh;
+    /* padding: 2vw; */
+    /* border: 2px solid; */
+}
+main .cards1{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    /* border: 2px solid; */
+}
+main .image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2vw;
+    object-fit: cover;
+    /* border: 2px solid; */
+}

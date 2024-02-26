@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+       <div class="profileCont">
+
+        <div class="top" > 
+                <nav>
+                    <div class="one">
+                       <img src="../images/pintrest.png" alt=""> 
+                       <h3>Home</h3>
+                       <h3><a href="/feed" style="text-decoration: none;">Explore</a></h3>
+                       <h3>Create</h3>
+                    </div>
+                    <div class="two"> 
+                        <input type="text" placeholder="Search your Pins">
+                    </div>
+                    <div class="three">
+                        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <i class="fa-solid fa-angle-down"></i>
+                        <a href="/logout">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </a>
+                        </div>
+                </nav>
+
+                <div class="mainInfo">
+                    <div class="inner">
+                        <div class="img">
+                            <form id="uploadForm2" action="/dpupload" method="post" enctype="multipart/form-data">
+                                <input type="file" name="dp" style="display: none;">
+                                <i class="fa-solid fa-pencil" id="uploadIcon2" style="cursor: pointer;"></i>
+                            </form>
+                            <img src="/images/uploads/<%= user.profileimage %>" alt="">              
+                        </div>
+                        <div class="personal">
+                            <h1><%= user.fullname%></h1>
+                            <p>@<%= user.username%></p>
+                        </div>
+                        <div class="follow">
+                             <div class="first">
+                                <h3>91 Followers</h3>
+                                <h3>8 Following</h3>
+                             </div>
+                             <div class="second">
+                                <a href="/share">Share</a>
+                                <a href="/edit">Edit rofile</a>
+                             </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+
+        <div class="bottom">
+            <div class="add">
+
+                <div class="popup" id="popup-first">
+                    <h1 >Create a new post</h1>
+                    <hr>
+                    <form action="/createpost" method="post" enctype="multipart/form-data">
+                        <input type="text" placeholder="Heading" name="title">
+                        <!-- <input type="text" placeholder="Description"> -->
+                        <textarea name="description" placeholder="Description" id="" cols="30" rows="10"></textarea>
+                        <input type="file" id="uploadfile" hidden name="postimage">
+                        <label for="uploadfile" style="font-size: 1.1vw;">Upload file</label>
+                        <button style="font-size: 1.3vw;">Submit</button> 
+                    </form>
+                    <button onclick="close1()" style="font-size: 1.2vw;">Cancel</button>
+                </div>
+
+                <div class="add-left">
+                    <i class="fa-solid fa-bars" onclick="yogesh()" style="cursor: pointer;"></i>
+                </div>
+
+                <div class="add-right" style="cursor: pointer;" >
+                    
+                    <form id="uploadForm" action="/createpost" method="post" enctype="multipart/form-data">
+                         <input type="file" name="image"  hidden>
+                        <!-- <label for="dp" id=""> -->
+                            <i class="fa-solid fa-plus" id="uploadIcon"></i>
+                            <!-- </label> -->
+                            <!-- <button>submit odlsjfl</button> -->
+                            </form>
+                </div>
+            </div>
+            <div class="cards">
+
+                <% user.posts.forEach(function(data,i) {  %>
+                    <div class="card">
+                    <!-- <a href="/show/posts"><img src="/images/uploads/<%= user?.posts[i]?.image %>" alt=""></a> -->
+                    <a href="/show/posts"><img src="/images/uploads/<%= data.image %>" alt=""></a>
+                    <!-- <h3><%= user?.posts[0]?.title%></h3> -->
+                    <h3><%= user.posts[i].title.substring(0,20)%></h3>
+                    <!-- <p><%= user.posts[0].description.substring(0,20) %>...</p> -->
+                    <p><%= user?.posts.length %> Pins</p>
+                    <!-- <p>29 pins</p> -->
+                </div>
+                <% }) %>
+                
+                
+    
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // function submitForm(){
+        //     document.getElementById('UPLOADFORM').submit();
+        // }
+        document.querySelector("#uploadIcon").onclick = () => document.querySelector('input[name="image"]').click();
+        document.querySelector('input[name="image"]').onchange = () => document.querySelector('#uploadForm').submit();
+        
+        document.querySelector("#uploadIcon2").onclick = () => document.querySelector('input[name="dp"]').click();
+        document.querySelector('input[name="dp"]').onchange = () => document.querySelector('#uploadForm2').submit();
+
+        let popup = document.getElementById("popup-first");
+        let button=document.getElementById('close-button')
+        function yogesh(){
+            // alert("djlkfjsldf")
+            popup.style.visibility='visible'
+            popup.style.opacity='1'
+            // popup.classList.toggle("hide")
+
+
+        }
+
+
+
+        function close1(){
+            popup.style.visibility='hidden'
+            // popup.classList.remove("hello")
+        }
+
+    </script>
+</body>
+</html>
+ 

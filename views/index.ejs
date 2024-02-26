@@ -1,0 +1,18 @@
+<% include ./partials/header.ejs %>
+
+
+<div class="main">
+  <div class="loginform">
+      <h1 >Welcome to Pintrest</h1>
+      <form action="/login" method="post">
+        <input type="text" placeholder="username" name="username">
+        <input  type="password" placeholder="password" name="password">
+        <a href="#">forgot password</a>
+        <button >Login</button>
+      </form>
+      <a href="/register" style="text-align: center; display: block;">Don't have an Account</a>
+  </div>
+</div>
+
+
+<% include ./partials/footer.ejs %>

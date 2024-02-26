@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <title>All Posts</title>
+</head>
+<body>
+    <nav>
+        <div class="one">
+           <img src="../images/pintrest.png" alt=""> 
+           <h3>Home</h3>
+           <a href="/feed" style="text-decoration: none;"><h3>Explore</h3></a>
+           <h3>Create</h3>
+        </div>
+        <div class="two"> 
+            <input type="text" placeholder="Search your Pins">
+        </div>
+        <div class="three">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-comment-dots"></i>
+            <a href="/profile"><i class="fa-solid fa-earth-americas"></i></a>
+            <i class="fa-solid fa-angle-down"></i>
+            <a href="/logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+            </div>
+    </nav>
+    <main>
+
+        <% user.posts.forEach(function(item,i){ %>
+            <div class="show-box" style="border: 1px solid rgb(189, 207, 212); padding: 0.3vw 0.3vw;border-radius: 1vw;">
+                <!-- <img src="/images/uploads/<%= user.posts[i].image%>" alt=""> -->
+                <img src="/images/uploads/<%= item.image%>" alt="">
+                <!-- <h2><%= user.posts[i].title.substring(0,30) %></h2> -->
+                <h2><%= item.title.substring(0,30) %></h2>
+            </div>
+        <% }) %>
+
+
+
+    </main>
+</body>
+</html>
