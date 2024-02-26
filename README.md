@@ -1,4 +1,4 @@
-# Pin
+# Pintrest
 
 1) Login and Register Screen  (/)
 2) register
